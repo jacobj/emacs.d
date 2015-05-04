@@ -34,33 +34,16 @@ re-downloaded in order to locate PACKAGE."
       (progn
         (package-refresh-contents)
         (require-package package min-version t)))))
-
-(require-package 'solarized-theme)
-(require-package 'magit)
-(require-package 'rainbow-delimiters)
-(require-package 'auto-complete)
-(require-package 'arduino-mode)
-(require-package 'deft)
-(require-package 'ess)
-(require-package 'evil)
-(require-package 'projectile)
-(require-package 'flycheck)
-(require-package 'ido-ubiquitous)
-(require-package 'markdown-mode)
-(require-package 'python-mode)
-(require-package 'smex)
-(require-package 'sr-speedbar)
-(require-package 'smart-mode-line)
-(require-package 'yasnippet)
-(require-package 'helm)
-(require-package 'js2-mode)
-(require-package 'web-mode)
-(require-package 'markdown-mode)
+(require-package 'sml-modeline)
 (require-package 'git-gutter-fringe)
 
 ;; Add some more stuff to the load path.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+
+;; (require 'server)
+;; (unless (server-running-p)
+;;   (server-start))
 
 ;; Taken from better-defaults package
 (ido-mode t)
@@ -105,8 +88,10 @@ re-downloaded in order to locate PACKAGE."
 ;; Smex settings
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
+;;(global-set-key (kbd "M-x") 'smex)
 ;;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; Use Emacs terminfo, not system terminfo
 (set-terminal-coding-system 'utf-8-unix)
@@ -120,40 +105,40 @@ re-downloaded in order to locate PACKAGE."
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;; mu4e
-(require 'mu4e)
+;; (require 'mu4e)
 
-;; default
-(setq mu4e-maildir (expand-file-name "~/Maildir"))
+;; ;; default
+;; (setq mu4e-maildir (expand-file-name "~/Maildir"))
 
-(setq mu4e-drafts-folder "/[Gmail].Drafts")
-(setq mu4e-sent-folder   "/[Gmail].Sent Mail")
-(setq mu4e-trash-folder  "/[Gmail].Trash")
+;; (setq mu4e-drafts-folder "/[Gmail].Drafts")
+;; (setq mu4e-sent-folder   "/[Gmail].Sent Mail")
+;; (setq mu4e-trash-folder  "/[Gmail].Trash")
 
-;; don't save message to Sent Messages, GMail/IMAP will take care of this
-(setq mu4e-sent-messages-behavior 'delete)
+;; ;; don't save message to Sent Messages, GMail/IMAP will take care of this
+;; (setq mu4e-sent-messages-behavior 'delete)
 
-;; setup some handy shortcuts
-(setq mu4e-maildir-shortcuts
-      '(("/INBOX"             . ?i)
-        ("/[Gmail].Sent Mail" . ?s)
-        ("/[Gmail].Trash"     . ?t)))
+;; ;; setup some handy shortcuts
+;; (setq mu4e-maildir-shortcuts
+;;       '(("/INBOX"             . ?i)
+;;         ("/[Gmail].Sent Mail" . ?s)
+;;         ("/[Gmail].Trash"     . ?t)))
 
-;; allow for updating mail using 'U' in the main view:
-(setq mu4e-get-mail-command "offlineimap")
+;; ;; allow for updating mail using 'U' in the main view:
+;; (setq mu4e-get-mail-command "offlineimap")
 
-;; something about ourselves
-;; I don't use a signature...
-(setq
- user-mail-address "jacobkablam@gmail.com"
- user-full-name  "Jacob Jenkins"
- ;; message-signature
- ;;  (concat
- ;;    "Foo X. Bar\n"
- ;;    "http://www.example.com\n")
- )
+;; ;; something about ourselves
+;; ;; I don't use a signature...
+;; (setq
+;;  user-mail-address "jacobkablam@gmail.com"
+;;  user-full-name  "Jacob Jenkins"
+;;  ;; message-signature
+;;  ;;  (concat
+;;  ;;    "Foo X. Bar\n"
+;;  ;;    "http://www.example.com\n")
+;;  )
 
-(require 'mu4e-contrib) 
-(setq mu4e-html2text-command 'mu4e-shr2text)
+;; (require 'mu4e-contrib) 
+;; (setq mu4e-html2text-command 'mu4e-shr2text)
 
 ;; Set to the location of your Org files on your local system
 (setq org-directory "~/Dropbox/Org")
@@ -242,6 +227,8 @@ re-downloaded in order to locate PACKAGE."
 
 (require 'ess-site)
 
+(setenv "NODE_NO_READLINE" "1")
+
 ;; Clean eshell prompt
 (setq eshell-prompt-function
       (lambda nil
@@ -319,18 +306,9 @@ re-downloaded in order to locate PACKAGE."
 
 ;; Solarized settings.
 (setq solarized-use-variable-pitch nil)
-(setq solarized-height-plus-1 1.0)
-(setq solarized-height-plus-2 1.0)
-(setq solarized-height-plus-3 1.0)
-(setq solarized-height-plus-4 1.0)
 (setq x-underline-at-descent-line t)
-
-;; Monokai settings.
-(setq monokai-use-variable-pitch nil)
-(setq monokai-height-plus-1 1.0)
-(setq monokai-height-plus-2 1.0)
-(setq monokai-height-plus-3 1.0)
-(setq monokai-height-plus-4 1.0)
+(setq solarized-scale-org-headlines nil)
+(setq solarized-emphasize-indicators nil)
 
 ;; Load theme
 (load-theme 'solarized-light t)
@@ -357,19 +335,11 @@ re-downloaded in order to locate PACKAGE."
 ;; Bind it to F5
 (global-set-key (kbd "<f5>") 'toggle-bg)
 
-;; Toggle Speedbar, nerdtree style!
-(global-set-key (kbd "<f4>") 'sr-speedbar-toggle)
-
 ;; Toggle Font Lock
 (global-set-key (kbd "<f6>") 'font-lock-mode)
 
 ;; Toggle Fullscreen
 (global-set-key (kbd "<f9>") 'toggle-frame-fullscreen)
-
-;; Speedbar (for those moments)
-(setq speedbar-use-images nil)
-(setq sr-speedbar-width-x 20)
-(setq sr-speedbar-right-side nil)
 
 ;; Auto Complete config.
 ;; (require 'auto-complete-config)
@@ -485,6 +455,7 @@ re-downloaded in order to locate PACKAGE."
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 
 ;; Git info in the fringe!
 (require 'git-gutter-fringe)
@@ -493,7 +464,7 @@ re-downloaded in order to locate PACKAGE."
 
 ;; Turn off Yasnippet in term modes.
 (add-hook 'term-mode-hook (lambda()
-  (setq yas-dont-activate t)))
+                            (setq yas-dont-activate t)))
 
 ;; Projectile Stuff
 (projectile-global-mode)
@@ -505,6 +476,17 @@ re-downloaded in order to locate PACKAGE."
             (if (string-match "\\.zsh$" buffer-file-name)
                 (sh-set-shell "zsh"))))
 
+;; JSX in Web Mode
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
+    ad-do-it))
+
+(setq js-indent-level 2)
+
+;; web-beautify hooks.
 (eval-after-load 'js2-mode
   '(add-hook 'js2-mode-hook
              (lambda ()
@@ -516,7 +498,57 @@ re-downloaded in order to locate PACKAGE."
              (lambda ()
                (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
 
+(eval-after-load 'sgml-mode
+  '(add-hook 'html-mode-hook
+             (lambda ()
+               (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
+
 (eval-after-load 'json-mode
   '(add-hook 'json-mode-hook
              (lambda ()
                (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
+
+;; Custom fringe indicator for Flycheck (from Spacemacs)
+(define-fringe-bitmap 'my-flycheck-fringe-indicator
+  (vector #b00000000
+          #b00000000
+          #b00000000
+          #b00000000
+          #b00000000
+          #b00000000
+          #b00000000
+          #b00011100
+          #b00111110
+          #b00111110
+          #b00111110
+          #b00011100
+          #b00000000
+          #b00000000
+          #b00000000
+          #b00000000
+          #b01111111))
+
+(flycheck-define-error-level 'error
+  :overlay-category 'flycheck-error-overlay
+  :fringe-bitmap 'my-flycheck-fringe-indicator
+  :fringe-face 'flycheck-fringe-error)
+
+(flycheck-define-error-level 'warning
+  :overlay-category 'flycheck-warning-overlay
+  :fringe-bitmap 'my-flycheck-fringe-indicator
+  :fringe-face 'flycheck-fringe-warning)
+
+(flycheck-define-error-level 'info
+  :overlay-category 'flycheck-info-overlay
+  :fringe-bitmap 'my-flycheck-fringe-indicator
+  :fringe-face 'flycheck-fringe-info)
+
+;; Nice helm, mate.
+(add-to-list 'display-buffer-alist
+                    `(,(rx bos "*helm" (* not-newline) "*" eos)
+                         (display-buffer-in-side-window)
+                         (inhibit-same-window . t)
+                         (window-height . 0.4)))
+
+;; Smart modeline :)
+(sml/setup)
