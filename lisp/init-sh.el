@@ -1,3 +1,7 @@
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; Config for sh-mode ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; sh-mode hook for Zsh
 (add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
 (add-hook 'sh-mode-hook
