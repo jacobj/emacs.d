@@ -12,6 +12,7 @@ Settings for `evil-mode` because modal editing is swell.
 
 Language settings for:
 - **JavaScript** via `js2-mode` and `web-mode`
+- **Python** via `jedi` and `company-jedi`
 - **Docker** via `dockerfile-mode`
 - **Scala** via `scala2-mode`
 - **R** via `ESS` featuring super sweet eval keybindings.

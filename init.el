@@ -42,6 +42,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'angular-snippets)
 (require-package 'arduino-mode)
 (require-package 'company)
+(require-package 'company-jedi)
 (require-package 'company-tern)
 (require-package 'deft)
 (require-package 'dockerfile-mode)
@@ -56,7 +57,9 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'helm-themes)
 (require-package 'helm-projectile)
 (require-package 'ido-ubiquitous)
+(require-package 'jedi)
 (require-package 'js2-mode)
+(require-package 'js2-refactor)
 (require-package 'linum-relative)
 (require-package 'magit)
 (require-package 'markdown-mode)
@@ -108,9 +111,11 @@ re-downloaded in order to locate PACKAGE."
 (require 'init-web)
 (require 'init-yasnippet)
 
-;; Load path from system shell when using cocoa emacs
-(when (memq window-system '(mac ns))
-  (require 'osx))
+;; OS specific GUI configs.
+(when (display-graphic-p)
+  (if (string-equal system-type "gnu/linux")
+      (require 'linux)
+    (require 'osx)))
 
 ;; Set a seperate file for customize interface changes.
 (setq custom-file "~/.emacs.d/custom.el")
