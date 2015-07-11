@@ -5,22 +5,12 @@
 ;; seems to change on a daily basis.
 (setq ns-use-native-fullscreen t)
 
-;; make the fringe (gutter) smaller the argument is a width in pixels
-;; (the default is 8).
-(if (fboundp 'fringe-mode) 
-    (fringe-mode 8))
-
 ;; Menu Bar is somewhat nice to have in OS X.
-;; (menu-bar-mode)
+(menu-bar-mode)
 
 ;; Font stuff
-(set-face-attribute 'default nil :font "Meslo LG S-12")
+(set-face-attribute 'default nil :font "Meslo LG S" :weight 'normal :width 'normal :height 120)
 (set-face-attribute 'variable-pitch nil :font "Helvetica Neue-13")
-(setq org-src-fontify-natively t)
-
-;; Org-Bullet GUI fancieness.
-;; (require 'org-bullets)
-;; (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 (setq-default line-spacing 2)
 
