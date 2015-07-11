@@ -1,11 +1,13 @@
 # Introduction
-This is my emacs config. It's split up into seperate init files and uses require-package to automatically install packages.
+This is my emacs config. It's split up into seperate init files and uses require-package to automatically install packages. It supports OS X and GNU/Linux.
 
 # Install
 - Requires Emacs ≥ 24.4, I prefer to use it with Emacs HEAD.
 - In order to use `web-beautify` and `tern` you have to install them globally via [NPM](https://www.npmjs.com/):
 `npm install -g js-beautify`
 `npm install -g tern`
+- For `jedi` completion to work properly run:
+<kbd>M-x</kbd> `jedi:install-server`
 
 # What's in the box?
 Settings for `evil-mode` because modal editing is swell.
