@@ -75,6 +75,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'solarized-theme)
 (require-package 'sx)
 (require-package 'tern)
+(require-package 'web-beautify)
 (require-package 'web-mode)
 (require-package 'writeroom-mode)
 (require-package 'yaml-mode)
