@@ -96,6 +96,7 @@ re-downloaded in order to locate PACKAGE."
 (require 'init-ess)
 (require 'init-evil)
 (require 'init-flycheck)
+(require 'init-flyspell)
 (require 'init-general)
 (require 'init-git)
 (require 'init-helm)

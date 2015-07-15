@@ -21,3 +21,4 @@ projectile-bookmarks.eld
 *.eld
 places
 *~
+.python-environments
