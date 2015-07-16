@@ -8,7 +8,7 @@ This is my emacs config. It's split up into seperate init files and uses require
 `npm install -g tern`
 - For `jedi` completion to work properly run:
 <kbd>M-x</kbd> `jedi:install-server`
-- For comment spell checking make sure you have aspell or ispell installed.
+- For comment spell checking make sure you have `aspell` or `ispell` installed.
 
 # What's in the box?
 Settings for `evil-mode` because modal editing is swell.
