@@ -9,7 +9,7 @@
 (menu-bar-mode)
 
 ;; Font stuff
-(set-face-attribute 'default nil :font "Meslo LG S" :weight 'normal :width 'normal :height 120)
+(set-face-attribute 'default nil :font "Hack" :weight 'normal :width 'normal :height 120)
 (set-face-attribute 'variable-pitch nil :font "Helvetica Neue-13")
 
 (setq-default line-spacing 2)
