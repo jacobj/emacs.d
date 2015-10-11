@@ -10,6 +10,9 @@ This is my emacs config. It's split up into seperate init files and uses require
 <kbd>M-x</kbd> `jedi:install-server`
 - For comment spell checking make sure you have `aspell` or `ispell` installed.
 
+# What's it look like?
+![](https://raw.githubusercontent.com/jacobj/emacs.d/master/screenshot.png)
+
 # What's in the box?
 Settings for `evil-mode` because modal editing is swell.
 
