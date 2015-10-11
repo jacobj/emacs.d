@@ -73,6 +73,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'smex)
 (require-package 'sml-modeline)
 (require-package 'solarized-theme)
+(require-package 'spaceline)
 (require-package 'sx)
 (require-package 'tide)
 (require-package 'tern)

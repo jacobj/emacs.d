@@ -7,6 +7,7 @@
 (setq x-underline-at-descent-line t)
 (setq solarized-scale-org-headlines nil)
 (setq solarized-emphasize-indicators nil)
+(setq solarized-high-contrast-mode-line t)
 
 ;; Load theme
 (load-theme 'solarized-light t)
@@ -34,6 +35,10 @@
 (global-set-key (kbd "<f5>") 'toggle-bg)
 
 ;; Smart modeline :)
-(sml/setup)
+;; (sml/setup)
+
+(require 'spaceline-config)
+(spaceline-spacemacs-theme)
+(setq powerline-default-separator "slant");
 
 (provide 'init-theme)

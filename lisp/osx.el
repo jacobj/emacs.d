@@ -17,6 +17,9 @@
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'hyper)
 
+;; Fix powerline seperators on OS X
+(setq ns-use-srgb-colorspace nil)
+
 ;; Keybindings
 (global-set-key [(hyper a)] 'mark-whole-buffer)
 (global-set-key [(hyper v)] 'yank)
