@@ -16,7 +16,7 @@ This is my emacs config. It's split up into seperate init files and uses require
 # What's in the box?
 Settings for `evil-mode` because modal editing is swell.
 
-Language settings for:
+### Language settings for:
 - **JavaScript** via `js2-mode` and `web-mode`
 - **TypeScript** via `typescript-mode` and `tide`
 - **Python** via `jedi` and `company-jedi`
@@ -29,7 +29,7 @@ Language settings for:
 - **Arduino** via `arduino-mode`
 - More to come!
 
-Additional settings for:
+### Additional settings for:
 - `helm` and `helm-projectile`
 - `company`
 - `git-gutter-mode`
