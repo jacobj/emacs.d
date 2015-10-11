@@ -45,6 +45,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'company-jedi)
 (require-package 'company-tern)
 (require-package 'deft)
+(require-package 'diminish)
 (require-package 'dockerfile-mode)
 (require-package 'ein)
 (require-package 'ess)

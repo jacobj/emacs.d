@@ -41,4 +41,13 @@
 (spaceline-spacemacs-theme)
 (setq powerline-default-separator "slant");
 
+(require 'diminish)
+(diminish 'undo-tree-mode)
+(diminish 'git-gutter-mode)
+(diminish 'company-mode)
+(diminish 'projectile-mode)
+(diminish 'yas-minor-mode)
+(diminish 'flycheck-mode)
+(diminish 'flyspell-mode)
+
 (provide 'init-theme)
