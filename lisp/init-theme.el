@@ -39,15 +39,16 @@
 
 (require 'spaceline-config)
 (spaceline-spacemacs-theme)
-(setq powerline-default-separator "slant");
+(setq powerline-default-separator 'slant);
 
 (require 'diminish)
-(diminish 'undo-tree-mode)
-(diminish 'git-gutter-mode)
-(diminish 'company-mode)
-(diminish 'projectile-mode)
-(diminish 'yas-minor-mode)
-(diminish 'flycheck-mode)
-(diminish 'flyspell-mode)
+
+(eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
+(eval-after-load "git-gutter" '(diminish 'git-gutter-mode))
+(eval-after-load "company" '(diminish 'company-mode))
+(eval-after-load "projectile" '(diminish 'projectile-mode))
+(eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
+(eval-after-load "flycheck" '(diminish 'flycheck-mode))
+(eval-after-load "flyspell" '(diminish 'flyspell-mode))
 
 (provide 'init-theme)

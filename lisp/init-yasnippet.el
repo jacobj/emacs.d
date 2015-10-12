@@ -2,6 +2,6 @@
 ;; Config for Yasnippet ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(yas-global-mode 1)
+(yas-global-mode t)
 
 (provide 'init-yasnippet)
