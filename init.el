@@ -53,6 +53,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'flycheck)
 (require-package 'gist)
 (require-package 'git-gutter-fringe)
+(require-package 'git-commit-insert-issue)
 (require-package 'helm)
 (require-package 'helm-ag)
 (require-package 'helm-themes)

@@ -10,4 +10,7 @@
 ;; Magit status keybind
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; Github issue auto completion
+(add-hook 'git-commit-mode-hook 'git-commit-insert-issue-mode)
+
 (provide 'init-git)
