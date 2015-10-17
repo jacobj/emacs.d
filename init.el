@@ -10,13 +10,12 @@
 
 ;; Package repos
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/"))
+             '("elpa" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-             '("elpa" . "http://tromey.com/elpa/"))
-(add-to-list 'package-archives
-             '("org" . "http://orgmode.org/elpa/"))
+             '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
 ;; We want to use the stuff we install right?
 (package-initialize)
@@ -41,6 +40,8 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'ag)
 (require-package 'angular-snippets)
 (require-package 'arduino-mode)
+(require-package 'cider)
+(require-package 'clojure-mode)
 (require-package 'company)
 (require-package 'company-jedi)
 (require-package 'company-tern)
@@ -51,6 +52,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'ess)
 (require-package 'evil)
 (require-package 'flycheck)
+(require-package 'flycheck-clojure)
 (require-package 'gist)
 (require-package 'git-gutter-fringe)
 (require-package 'helm)
@@ -94,6 +96,7 @@ re-downloaded in order to locate PACKAGE."
 ;; Mode inits
 (require 'init-arduino)
 (require 'init-asm)
+(require 'init-clojure)
 (require 'init-company)
 (require 'init-docker)
 (require 'init-ess)

@@ -2,6 +2,9 @@
 ;;  Config for Flycheck  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Flycheck for Clojure
+(eval-after-load 'flycheck '(flycheck-clojure-setup))
+
 ;; Use the greatness that is flycheck in all programming modes.
 (add-hook 'prog-mode-hook 'flycheck-mode)
 
