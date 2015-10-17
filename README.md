@@ -18,6 +18,7 @@ Settings for `evil-mode` because modal editing is swell.
 
 ### Language settings for:
 - **JavaScript** via `js2-mode` and `web-mode`
+- **Clojure** via `clojure-mode` and `CIDER`
 - **TypeScript** via `typescript-mode` and `tide`
 - **Python** via `jedi` and `company-jedi`
 - **Docker** via `dockerfile-mode`
