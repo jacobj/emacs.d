@@ -15,7 +15,6 @@
              '("elpa" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
-(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
 ;; We want to use the stuff we install right?
 (package-initialize)

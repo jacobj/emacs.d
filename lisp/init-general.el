@@ -62,8 +62,12 @@
 (setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
 
-;; Upcase region is super annoying.
-(put 'upcase-region 'disabled t)
+;; Disable shit I don't like
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'erase-buffer 'disabled nil)
+(put 'scroll-left 'disabled nil)
 
 ;; Change font size
 (when window-system
