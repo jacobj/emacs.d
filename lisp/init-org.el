@@ -22,8 +22,8 @@
 (require 'deft)
 
 ;; Set Deft as the initial mode.
-(when (locate-library "deft")
-  (setq initial-major-mode 'deft))
+;; (when (locate-library "deft")
+;;  (setq initial-major-mode 'deft))
 
 (setq deft-extension "org")
 (setq deft-directory "~/Dropbox/Org")

@@ -25,11 +25,13 @@
         ;; Light Mode
         (disable-theme 'solarized-dark)
         (load-theme 'solarized-light t)
-        (set-face-attribute 'linum nil :inherit 'default :background "#eee8d5"))
+        (set-face-attribute 'linum nil :inherit 'default :background "#eee8d5")
+        (powerline-reset))
     ;; Dark Mode
     (disable-theme 'solarized-light)
     (load-theme 'solarized-dark t)
-    (set-face-attribute 'linum nil :inherit 'default :background "#073642")))
+    (set-face-attribute 'linum nil :inherit 'default :background "#073642")
+    (powerline-reset)))
 
 ;; Bind it to F5
 (global-set-key (kbd "<f5>") 'toggle-bg)

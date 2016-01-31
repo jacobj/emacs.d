@@ -50,6 +50,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'ein)
 (require-package 'ess)
 (require-package 'evil)
+(require-package 'exec-path-from-shell)
 (require-package 'flycheck)
 (require-package 'flycheck-clojure)
 (require-package 'gist)
@@ -76,6 +77,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'smex)
 (require-package 'sml-modeline)
 (require-package 'solarized-theme)
+(require-package 'spacemacs-theme)
 (require-package 'spaceline)
 (require-package 'sx)
 (require-package 'tide)
@@ -110,6 +112,7 @@ re-downloaded in order to locate PACKAGE."
 (require 'init-latex)
 (require 'init-linum)
 (require 'init-org)
+(require 'init-parens)
 (require 'init-projectile)
 (require 'init-scala)
 (require 'init-sh)
@@ -119,6 +122,8 @@ re-downloaded in order to locate PACKAGE."
 (require 'init-utils)
 (require 'init-web)
 (require 'init-yasnippet)
+
+(add-to-list 'load-path "~./.emacs.d/fireplace")
 
 ;; OS specific GUI configs.
 (when (display-graphic-p)

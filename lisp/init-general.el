@@ -15,6 +15,8 @@
 (require 'saveplace)
 (setq-default save-place t)
 
+(setq create-lockfiles nil)
+
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
 (setq x-select-enable-clipboard t
@@ -23,8 +25,7 @@
       apropos-do-all t
       mouse-yank-at-point t
       save-place-file (concat user-emacs-directory "places")
-      backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                               "backups"))))
+      backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 
 (require 'ido)
 ;; Ido everywhere it can be used.
