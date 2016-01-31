@@ -6,6 +6,8 @@
 (set-terminal-coding-system 'utf-8-unix)
 (setq system-uses-terminfo nil)
 
+(setq tramp-terminal-type "dumb")
+
 ;; Clean eshell prompt
 (setq eshell-prompt-function
       (lambda nil
