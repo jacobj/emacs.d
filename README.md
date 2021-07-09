@@ -1,3 +1,6 @@
+# Deprecated
+See https://github.com/jacobj/dotfiles for doom emacs config
+
 # Introduction
 This is my emacs config. It's split up into seperate init files and uses require-package to automatically install packages. It supports OS X and GNU/Linux.
 
